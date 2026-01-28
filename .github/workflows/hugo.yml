@@ -1,0 +1,52 @@
+name: Deploy Hugo site to Pages
+
+on:
+  push:
+    branches:
+      - main  # 你的默认分支
+  workflow_dispatch:
+
+permissions:
+  contents: read      # 只读代码
+  pages: write        # 发布到 GitHub Pages
+  id-token: write     # 部署权限
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 必须：拉取完整 Git 历史, 否则 Hugo 的 GitInfo 无法获取文件的最后修改时间（Lastmod）
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true   # PaperMod 需要 extended 版本
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public  # Hugo 生成的输出目录
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
