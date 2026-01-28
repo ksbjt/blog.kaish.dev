@@ -1,0 +1,5 @@
+{{/* Shortcode: days-since */}}
+{{- $start := time (.Get 0) -}}
+{{- $now := now -}}
+{{- $days := div (sub $now.Unix $start.Unix) 86400 -}}
+{{ $days }}

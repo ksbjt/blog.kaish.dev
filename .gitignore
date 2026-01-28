@@ -1,0 +1,13 @@
+# Hugo generated files
+public/
+resources/
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+
+# Hugo module cache
+hugo_cache/
+
+# Node (如果主题包含 tailwind)
+node_modules/
