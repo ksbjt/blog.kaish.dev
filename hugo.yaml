@@ -22,25 +22,12 @@ params:
 
   homeInfoParams: # 首页显示的信息（PaperMod 的 HomeInfo 区块）
     Title: "Kaishui" # 首页标题
-    Content: "世上一定有另外一个我, 过着我想要的生活." # 首页描述文本
+    Content: |
+      淡淡的, 就会顺顺的.
+
+      世上一定有另外一个我, 过着我想要的生活.
 
   ShowCodeCopyButtons: true # 启用代码复制按钮
-
-  socialIcons: # 主页底部显示的社交图标
-    - name: "qq"
-      url: "https://qm.qq.com/q/IPmTb1ZWwe"
-
-    - name: "github"
-      url: "https://github.com/ksbjt"
-
-    - name: "steam"
-      url: "https://steamcommunity.com/profiles/76561199267457975"
-
-    - name: "telegram"
-      url: "https://t.me/kaishuiya"
-
-    - name: "discord"
-      url: "https://discord.com/users/977917095260061697"
 
 menu:
   main:
