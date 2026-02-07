@@ -1,4 +1,4 @@
-baseURL: "https://kaish.dev/" # 网站URL
+baseURL: "https://blog.kaish.dev/" # 网站URL
 languageCode: "en-us"         # 网站语言
 title: "开水的博客"            # 网站标题
 
