@@ -12,6 +12,9 @@ theme: ["PaperMod"] # 使用 PaperMod 主题
 params:
   mainSections: ["posts"]
 
+  author:
+    name: "kaish"
+
   defaultTheme: auto          # 默认主题模式：auto=跟随系统, light=白天, dark=黑暗
   disableThemeToggle: false   # 是否禁用主题切换按钮
 
