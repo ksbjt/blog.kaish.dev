@@ -21,7 +21,7 @@ params:
   dateFormat: "2006-01-02"    # 日期显示格式（Go 模板格式, 此处为 YYYY-MM-DD）
 
   homeInfoParams: # 首页显示的信息（PaperMod 的 HomeInfo 区块）
-    Title: "Kaishui" # 首页标题
+    Title: "kaish" # 首页标题
     Content: |
       淡淡的, 就会顺顺的.
 
